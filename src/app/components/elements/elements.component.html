@@ -1,0 +1,12 @@
+<h2>ELEMENT list</h2>
+<p *ngFor="let element of elements">{{element.info}}</p>
+
+<table mat-table class="table">
+    <tr>
+    <th> TEST </th>
+   </tr>
+    <td *ngFor="let element of elements">{{element.active}}</td>
+   
+</table>
+  
+<app-element-item *ngFor="let element of elements" [element] ="element">{{element.info}}</app-element-item>

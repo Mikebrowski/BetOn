@@ -1,0 +1,6 @@
+header{
+    display: flex; /* BOX DIVISION */ 
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
