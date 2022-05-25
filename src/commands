@@ -1,1 +1,6 @@
 ng add @fortawesome/angular-fontawesome
+
+ng generate service services/component // NEEDS MORE INVSTIGATIOn
+
+npm run server WITH FAKE API json-server
+

@@ -1,0 +1,29 @@
+
+{ 
+  "elements":[
+      {
+          "id":1,
+          "info": "Swining around activity",
+          "day":"21.05.2022",
+          "active": true
+      },
+      {
+          "id":2,
+          "info": "Fishing and gym",
+          "day":"21.05.2022",
+          "active": false 
+      },
+      {
+          "id":3,
+          "info": "Gym lyfe",
+          "day":"21.05.2022",
+          "active": true
+      },
+      {
+          "id":4,
+          "info": "Gaming style",
+          "day":"23.05.2022",
+          "active": false
+      }
+  ]
+}
