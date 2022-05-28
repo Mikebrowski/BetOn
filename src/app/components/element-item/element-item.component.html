@@ -1,5 +1,6 @@
-<div class="element">
- <h4>{{element.info}} <fa-icon [icon]="faTimes"></fa-icon></h4> 
+<div [ngClass]="{activeTask: element.active}"  class="element" [ngStyle]="{ background: '#dbdbdb' }"   (dblclick)="onToggle(element)" >
+ <h4>{{element.info}} <fa-icon [ngStyle]="{ color: 'red' } " [ngStyle]="{ background: 'red' }"  (click)="onDelete(element)" [icon]="faTimes"> </fa-icon>
+ </h4> 
  <p>{{element.day}}</p>
  
 </div>

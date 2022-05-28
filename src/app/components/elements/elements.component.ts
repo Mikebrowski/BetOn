@@ -17,9 +17,25 @@ export class ElementsComponent implements OnInit {
 
   ngOnInit(): void {
     //FIRES RIGHT AWAY
-    this.componentService.getElements().subscribe((elements) => (this.elements = elements))
+    this.componentService.getElements().subscribe((elements) => 
+    (this.elements = elements))
 
     //USE OBSERVEABLE
+  }
+
+  deleteElement(element: Element) {    
+    this.componentService.deleteElement(element).subscribe(
+      () => (this.elements = this.elements.filter((element) => element.id !== element.id)));
+  }
+  deleteElement2 (element:Element){
+    this.componentService.deleteElement(element).subscribe(() => this.elements =this.elements.filter((e) => e.id !== e.id ))
+    // FOR EACH ELEMENT THAT IS DELETATE IS NOT EQUAL TO eachElement => eachElement.id ! === element.id )))
+
+  }
+  toggleActive(element:Element){
+    element.active =! element.active;
+    console.log(element.active)
+
   }
 
 }

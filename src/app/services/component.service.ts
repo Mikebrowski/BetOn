@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ELEMENTS } from '../mock-elements'; // STORAGE OF DATA OR examples 
 import { Element } from '../Element';  //INTERFACE
-import { Observable,of } from 'rxjs';
+import { catchError, Observable,of, throwError } from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
@@ -11,12 +11,41 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class ComponentService {
   private apiURL = 'http://localhost:5000/elements' //HERE YOU GRAB THE JSON ALL LOCALLY BUT SAY FIREBASE ADRESSE SHOULD WORK 
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getElements():Observable<Element[]>
   {
-    const elements = of(ELEMENTS);
+    return this.http.get<Element[]>(this.apiURL)
+
+    //const elements = of(ELEMENTS);
     //return ELEMENTS; //THIS IS NOT OBSERVERABLE
-    return elements
+    //return elements
   }
+  deleteElement(element:Element): Observable<Element> {
+    const url = `${this.apiURL}/${element.id}`;
+    console.log(element)
+    return this.http.delete<Element>(url);
+  }
+  toggleActive(element:Element){
+    element.active =! element.active;
+    console.log(element.active)
+
+  }
+
+
+  
+  /*
+  updateTaskReminder(element: Element): Observable<Element> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.put<Task>(url, task, httpOptions);
+  }
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiUrl, task, httpOptions);
+  }
+  
+  
+*/
+
+
+
 }
