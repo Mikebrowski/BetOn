@@ -1,5 +1,11 @@
-<h2>ELEMENT list</h2>
-<p *ngFor="let element of elements">{{element.info}}</p>
+<app-element-item 
+*ngFor="let element of elements" 
+[element] ="element" 
+(onDeleteElement)="deleteElement(element)"
+(onToggleActive)="toggleActive(element)"
+>
+
+</app-element-item>
 
 <table mat-table class="table">
     <tr>
@@ -8,5 +14,3 @@
     <td *ngFor="let element of elements">{{element.active}}</td>
    
 </table>
-  
-<app-element-item *ngFor="let element of elements" [element] ="element">{{element.info}}</app-element-item>
