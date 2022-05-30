@@ -4,6 +4,12 @@ import { Element } from '../Element';  //INTERFACE
 import { catchError, Observable,of, throwError } from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
+const httpOptions = {
+  headers: new HttpHeaders(
+    {'Content-Type':'application/json'}
+  ),
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +35,15 @@ export class ComponentService {
   toggleActive(element:Element){
     element.active =! element.active;
     console.log(element.active)
-
+  }
+  updateElementActive(element:Element): Observable<Element> {
+    const url = `${this.apiURL}/${element.id}`;
+    return this.http.put<Element>(url, element,httpOptions)
+  }
+  addTask(element:Element):Observable<Element>{
+    return this.http.post<Element>(this.apiURL, element, httpOptions);
   }
 
-
-  
   /*
   updateTaskReminder(element: Element): Observable<Element> {
     const url = `${this.apiUrl}/${task.id}`;
@@ -42,10 +52,5 @@ export class ComponentService {
   addTask(task: Task): Observable<Task> {
     return this.http.post<Task>(this.apiUrl, task, httpOptions);
   }
-  
-  
 */
-
-
-
 }

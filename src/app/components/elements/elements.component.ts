@@ -35,7 +35,13 @@ export class ElementsComponent implements OnInit {
   toggleActive(element:Element){
     element.active =! element.active;
     console.log(element.active)
-
+    this.componentService.updateElementActive(element).subscribe()
+  }
+  addTask(element:Element){
+    this.componentService.addTask(element).subscribe((element) => this.elements.push
+     
+      )
+    console.log(element)
   }
 
 }

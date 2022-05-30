@@ -1,0 +1,20 @@
+<form class="form-control form-control-fancy" (ngSubmit)="onSubmit()">
+    <div class="form-control ">
+    <label for="text">Add the activity</label>
+    <input type="text" name="info" id="info" [(ngModel)]="info" placeholder="Add activity">
+</div>
+<div class="form-control">
+    <label for="day">Date </label>
+    <input type="text" name="day" id="day" [(ngModel)]="day"
+    placeholder="Add date">
+    <label>
+        <input type="checkbox" name="active" [(ngModel)]="active">
+        <span class="bold">Active?</span>
+   </label>
+</div>
+<input type="submit" value="Save activity as input" class="btn">
+</form>
+
+
+<p> You have written the follow text in the activity:</p> <p> {{info}}</p>
+<p> With the the following date: {{day}}</p>

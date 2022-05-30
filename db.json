@@ -10,19 +10,25 @@
       "id": 2,
       "info": "Fishing and gym",
       "day": "21.05.2022",
-      "active": false
+      "active": true
     },
     {
       "id": 3,
       "info": "Gym lyfe",
       "day": "21.05.2022",
-      "active": true
+      "active": false
     },
     {
       "id": 4,
       "info": "Gaming style",
       "day": "23.05.2022",
-      "active": false
+      "active": true
+    },
+    {
+      "info": "sdsads",
+      "day": "sdsds",
+      "active": false,
+      "id": 5
     }
   ]
 }

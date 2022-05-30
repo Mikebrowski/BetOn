@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ContentComponent } from './components/content/content.component';
 import { ElementsComponent } from './components/elements/elements.component';
 import { ElementItemComponent } from './components/element-item/element-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddElementComponent } from './components/add-element/add-element.component';
 
 
 @NgModule({
@@ -21,13 +23,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ButtonsComponent,
     ContentComponent,
     ElementsComponent,
-    ElementItemComponent
+    ElementItemComponent,
+    AddElementComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
