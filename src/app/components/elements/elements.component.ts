@@ -43,5 +43,7 @@ export class ElementsComponent implements OnInit {
       )
     console.log(element)
   }
+  
 
+  
 }

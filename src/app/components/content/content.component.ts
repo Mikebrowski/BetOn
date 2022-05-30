@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ButtonsComponent } from '../buttons/buttons.component';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-content',
@@ -7,17 +8,25 @@ import { ButtonsComponent } from '../buttons/buttons.component';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  
+  showAddTask:boolean = true;
+  subscription!: Subscription;
 
-  constructor() {
-
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService.onToggle()
+    .subscribe(
+      value => this.showAddTask = value
+      )
   }
 
   ngOnInit(): void {
   }
   toggleAddElement(){
-    let s = 'something';
-    console.log(s);
-    
+    this.uiService.toggleAddTask();
+  }
+  toggleRemoveElement(){
+    let x = 'remove som';
+    console.log(x);
   }
   
 }

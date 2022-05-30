@@ -1,4 +1,6 @@
-<form class="form-control form-control-fancy" (ngSubmit)="onSubmit()">
+<form *ngIf="showAddTask"
+class="form-control form-control-fancy" 
+(ngSubmit)="onSubmit()">
     <div class="form-control ">
     <label for="text">Add the activity</label>
     <input type="text" name="info" id="info" [(ngModel)]="info" placeholder="Add activity">
@@ -13,8 +15,8 @@
    </label>
 </div>
 <input type="submit" value="Save activity as input" class="btn">
+<p> You have written the follow text in the activity:</p> <p> {{info}}</p>
+<p> With the the following date: {{day}}</p>
 </form>
 
 
-<p> You have written the follow text in the activity:</p> <p> {{info}}</p>
-<p> With the the following date: {{day}}</p>

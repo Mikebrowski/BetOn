@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,15 @@ import { ElementsComponent } from './components/elements/elements.component';
 import { ElementItemComponent } from './components/element-item/element-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddElementComponent } from './components/add-element/add-element.component';
+import { ContactComponent } from './components/contact/contact.component';
+
+
+const appRoutes: Routes = [
+  {path:'', component: ElementsComponent},
+  {path:'contact', component: ContactComponent}
+
+];
+
 
 
 @NgModule({
@@ -24,13 +34,15 @@ import { AddElementComponent } from './components/add-element/add-element.compon
     ContentComponent,
     ElementsComponent,
     ElementItemComponent,
-    AddElementComponent
+    AddElementComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes,{enableTracing:true}),
     FormsModule
   ],
   providers: [],

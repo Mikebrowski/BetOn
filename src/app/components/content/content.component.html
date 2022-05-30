@@ -1,7 +1,16 @@
-<app-buttons color="red" text1="remove"
-(btnClick)="toggleAddElement">
-</app-buttons>
 
-<app-buttons color="green" text1="Add"
-(btnClick)="toggleAddElement">
+<!--
+<app-buttons 
+color="red"
+text1="remove"
+
+(btnClick)="toggleRemoveElement()">
+</app-buttons>
+-->
+
+<app-buttons 
+color="{{showAddTask ? 'red' : 'green' }}"
+text1="{{showAddTask ? 'close' : 'add' }}"
+
+(btnClick)="toggleAddElement()">
 </app-buttons>
